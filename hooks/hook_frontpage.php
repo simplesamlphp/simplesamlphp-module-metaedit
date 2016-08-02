@@ -9,7 +9,7 @@ function metaedit_hook_frontpage(&$links) {
 	assert('array_key_exists("links", $links)');
 
 	$links['federation']['metaedit'] = array(
-		'href' => SimpleSAML_Module::getModuleURL('metaedit/index.php'),
+		'href' => \SimpleSAML\Module::getModuleURL('metaedit/index.php'),
 		'text' => array('en' => 'Metadata registry', 'no' => 'Metadata registrering'),
 		'shorttext' => array('en' => 'Metadata registry', 'no' => 'Metadata registrering'),
 	);
