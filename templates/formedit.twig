@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block preload %}
+    <link rel="stylesheet" media="screen" href="{{ asset('css/uitheme1.12.1/jquery-ui.min.css', 'metaedit') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/metaedit.css') }}" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#tabdiv").tabs();
+        });
+    </script>
+{% endblock %}
+
+{% block postload %}
+    <script src="{{ asset('js/jquery-1.12.4.min.js', 'metaedit') }}"></script>
+    <script src="{{ asset('js/jquery-ui-1.12.1.min.js', 'metaedit') }}"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Metadata Editor</h1>
+{{ form  }}
+<p id="formedit_right"><a href="index.php">Return to entity listing <strong>without saving...</strong></a></p>
+{% endblock %}

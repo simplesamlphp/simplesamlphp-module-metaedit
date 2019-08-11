@@ -1,14 +1,17 @@
 <?php
+
+use Webmozart\Assert\Assert;
+
 /**
  * Hook to add the modinfo module to the frontpage.
  *
  * @param array &$links  The links on the frontpage, split into sections.
  * @return void
  */
-function metaedit_hook_frontpage(&$links)
+
+function metaedit_hook_frontpage(array &$links): void
 {
-    assert(is_array($links));
-    assert(array_key_exists("links", $links));
+    Assert::keyExists($links, 'federation');
 
     $links['federation']['metaedit'] = [
         'href' => \SimpleSAML\Module::getModuleURL('metaedit/index.php'),

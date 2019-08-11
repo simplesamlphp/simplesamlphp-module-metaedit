@@ -1,5 +1,6 @@
 <?php
-/* 
+
+/*
  * The configuration of simpleSAMLphp statistics package
  */
 
@@ -8,4 +9,3 @@ $config = [
     'auth' => 'saml2',
     'useridattr' => 'eduPersonPrincipalName',
 ];
-
