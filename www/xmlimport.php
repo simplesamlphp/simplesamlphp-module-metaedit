@@ -2,8 +2,8 @@
 
 
 /* Load simpleSAMLphp, configuration and metadata */
-$config = SimpleSAML_Configuration::getInstance();
-$session = SimpleSAML_Session::getSessionFromRequest();
+$config = \SimpleSAML\Configuration::getInstance();
+$session = \SimpleSAML\Session::getSessionFromRequest();
 
-$template = new SimpleSAML_XHTML_Template($config, 'metaedit:xmlimport.tpl.php');
+$template = new \SimpleSAML\XHTML\Template($config, 'metaedit:xmlimport.tpl.php');
 $template->show();

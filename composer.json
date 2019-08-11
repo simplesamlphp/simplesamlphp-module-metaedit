@@ -13,6 +13,11 @@
             "email": "olav.morken@uninett.no"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "SimpleSAML\\Module\\metaedit\\": "lib/"
+        }
+    },
     "require": {
         "simplesamlphp/composer-module-installer": "~1.0"
     },
