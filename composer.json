@@ -2,6 +2,7 @@
     "name": "simplesamlphp/simplesamlphp-module-metaedit",
     "description": "A SimpleSAMLphp module for metadata editing and registration.",
     "type": "simplesamlphp-module",
+    "license": "LGPL-2.1-or-later",
     "keywords": [ "simplesamlphp", "modules" ],
     "authors": [
         {
