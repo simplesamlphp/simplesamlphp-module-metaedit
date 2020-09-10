@@ -8,7 +8,6 @@ use SAML2\Constants;
 /**
  * Editor for metadata
  *
- * @author Andreas Åkre Solberg <andreas@uninett.no>, UNINETT AS.
  * @package simpleSAMLphp
  */
 class MetaEditor
