@@ -22,7 +22,6 @@ $userid = $attributes[$useridattr][0];
 /**
  * @param array $metadata
  * @param string $userid
- * @return void
  */
 function requireOwnership($metadata, $userid)
 {

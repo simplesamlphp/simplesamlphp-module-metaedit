@@ -16,7 +16,6 @@ class MetaEditor
      * @param array $request
      * @param array &$metadata
      * @param string $key
-     * @return void
      */
     protected function getStandardField(array $request, array &$metadata, string $key): void
     {
@@ -34,7 +33,6 @@ class MetaEditor
      * @param string $key
      * @param string $binding
      * @param bool $indexed
-     * @return void
      */
     protected function getEndpointField(
         array $request,
@@ -85,7 +83,6 @@ class MetaEditor
     /**
      * @param array $request
      * @param string $key
-     * @return void
      */
     protected function requireStandardField(array $request, string $key): void
     {
@@ -100,7 +97,6 @@ class MetaEditor
 
     /**
      * @param array $request
-     * @return void
      */
     public function checkForm(array $request): void
     {
@@ -165,7 +161,6 @@ class MetaEditor
     /**
      * @param array &$metadata
      * @param string $key
-     * @return void
      */
     protected function flattenLanguageField(array &$metadata, string $key): void
     {

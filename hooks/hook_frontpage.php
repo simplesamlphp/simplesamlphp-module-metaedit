@@ -6,7 +6,6 @@ use Webmozart\Assert\Assert;
  * Hook to add the modinfo module to the frontpage.
  *
  * @param array &$links  The links on the frontpage, split into sections.
- * @return void
  */
 
 function metaedit_hook_frontpage(array &$links): void
