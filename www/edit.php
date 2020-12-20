@@ -1,5 +1,6 @@
 <?php
 
+use Exception;
 use SimpleSAML\Configuration;
 use SimpleSAML\Utils;
 
@@ -91,7 +92,10 @@ if (isset($_POST['submit'])) {
         requireOwnership($testmetadata, $userid);
     }
 
-    $mdh->saveMetadata($metadata['entityid'], 'saml20-sp-remote', $metadata);
+    $result = $mdh->saveMetadata($metadata['entityid'], 'saml20-sp-remote', $metadata);
+    if ($result === false) {
+        throw new Exception("Could not save metadata. See log for details");
+    }
 
     $template = new \SimpleSAML\XHTML\Template($config, 'metaedit:saved.twig');
     $template->send();
