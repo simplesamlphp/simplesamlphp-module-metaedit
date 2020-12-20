@@ -26,7 +26,7 @@ function requireOwnership($metadata, $userid) {
 
 
 if (array_key_exists('entityid', $_REQUEST)) {
-	$metadata = $mdh->getMetadata($_REQUEST['entityid'], 'saml20-sp-remote');	
+	$metadata = $mdh->getMetadata($_REQUEST['entityid'], 'saml20-sp-remote');
 	requireOwnership($metadata, $userid);
 } elseif(array_key_exists('xmlmetadata', $_REQUEST)) {
 
@@ -53,21 +53,24 @@ $editor = new sspmod_metaedit_MetaEditor();
 if (isset($_POST['submit'])) {
 	$editor->checkForm($_POST);
 	$metadata = $editor->formToMeta($_POST, array(), array('owner' => $userid));
-	
+
 	if (isset($_REQUEST['was-entityid']) && $_REQUEST['was-entityid'] !== $metadata['entityid']) {
-		$premetadata = $mdh->getMetadata($_REQUEST['was-entityid'], 'saml20-sp-remote');	
+		$premetadata = $mdh->getMetadata($_REQUEST['was-entityid'], 'saml20-sp-remote');
 		requireOwnership($premetadata, $userid);
 		$mdh->deleteMetadata($_REQUEST['was-entityid'], 'saml20-sp-remote');
 	}
-	
-	$testmetadata = NULL;
+
+	$testmetadata = null;
 	try {
 		$testmetadata = $mdh->getMetadata($metadata['entityid'], 'saml20-sp-remote');
 	} catch(Exception $e) {}
 	if ($testmetadata) requireOwnership($testmetadata, $userid);
-	
-	$mdh->saveMetadata($metadata['entityid'], 'saml20-sp-remote', $metadata);
-	
+
+	$result = $mdh->saveMetadata($metadata['entityid'], 'saml20-sp-remote', $metadata);
+        if ($result === false) {
+            throw new \Exception("Could not save metadata. See log for details");
+        }
+
 	$template = new SimpleSAML_XHTML_Template($config, 'metaedit:saved.php');
 	$template->show();
 	exit;
