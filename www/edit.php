@@ -44,7 +44,8 @@ if (array_key_exists('entityid', $_REQUEST)) {
     requireOwnership($metadata, $userid);
 } elseif (array_key_exists('xmlmetadata', $_REQUEST)) {
     $xmldata = $_REQUEST['xmlmetadata'];
-    Utils\XML::checkSAMLMessage($xmldata, 'saml-meta');
+    $xmlUtils = new Utils\XML();
+    $xmlUtils->checkSAMLMessage($xmldata, 'saml-meta');
     $entities = \SimpleSAML\Metadata\SAMLParser::parseDescriptorsString($xmldata);
     $entity = array_pop($entities);
     $metadata =  $entity->getMetadata20SP();
