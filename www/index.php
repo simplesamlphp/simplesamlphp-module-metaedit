@@ -4,10 +4,10 @@
 $config = \SimpleSAML\Configuration::getInstance();
 $metaconfig = \SimpleSAML\Configuration::getConfig('module_metaedit.php');
 
-$mdh = new \SimpleSAML\Metadata\MetaDataStorageHandlerSerialize($metaconfig->getValue('metahandlerConfig', null));
+$mdh = new \SimpleSAML\Metadata\MetaDataStorageHandlerSerialize($metaconfig->getOptionalValue('metahandlerConfig', null));
 
-$authsource = $metaconfig->getValue('auth', 'login-admin');
-$useridattr = $metaconfig->getValue('useridattr', 'eduPersonPrincipalName');
+$authsource = $metaconfig->getOptionalValue('auth', 'login-admin');
+$useridattr = $metaconfig->getOptionalValue('useridattr', 'eduPersonPrincipalName');
 
 $as = new \SimpleSAML\Auth\Simple($authsource);
 $as->requireAuth();
