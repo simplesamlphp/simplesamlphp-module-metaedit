@@ -4,24 +4,27 @@
 [![Type Coverage](https://shepherd.dev/github/simplesamlphp/simplesamlphp-module-metaedit/coverage.svg)](https://shepherd.dev/github/simplesamlphp/simplesamlphp-module-metaedit)
 [![Psalm Level](https://shepherd.dev/github/simplesamlphp/simplesamlphp-module-metaedit/level.svg)](https://shepherd.dev/github/simplesamlphp/simplesamlphp-module-metaedit)
 
-Metaedit module
-===============
+# Metaedit module
 
 This module provides a web interface for very basic metadata editing and registration.
 
-Installation
-------------
+## Install
 
 Once you have installed SimpleSAMLphp, installing this module is very simple. Just execute the following
 command in the root of your SimpleSAMLphp installation:
 
-```shell
-composer.phar require simplesamlphp/simplesamlphp-module-metaedit:dev-master
+```bash
+    vendor/bin/composer require simplesamlphp/simplesamlphp-module-metaedit
 ```
 
-where `dev-master` instructs Composer to install the `master` branch from the Git repository. See the
-[releases](https://github.com/simplesamlphp/simplesamlphp-module-metaedit/releases) available if you
-want to use a stable version of the module.
+## Configuration
 
-The module is enabled by default. If you want to disable the module once installed, you just need to create a file named
-`disable` in the `modules/metaedit/` directory inside your SimpleSAMLphp installation.
+Next thing you need to do is to enable the module: in `config.php`,
+search for the `module.enable` key and set `metaedit` to true:
+
+```php
+    'module.enable' => [
+        'metaedit' => true,
+        …
+    ],
+```
