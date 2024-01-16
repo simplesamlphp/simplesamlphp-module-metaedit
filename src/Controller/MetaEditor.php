@@ -97,7 +97,9 @@ class MetaEditor
         }
         $userid = $attributes[$useridattr][0];
 
-        $mdh = new Metadata\MetaDataStorageHandlerSerialize($this->moduleConfig->getArray('metahandlerConfig', ['directory' => '']));
+        $mdh = new Metadata\MetaDataStorageHandlerSerialize(
+            $this->moduleConfig->getArray('metahandlerConfig', ['directory' => '']),
+        );
 
         $delete = $request->get('delete');
         if ($delete !== null) {

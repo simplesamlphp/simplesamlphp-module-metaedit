@@ -12,7 +12,6 @@ use SimpleSAML\Module\metaedit\Controller;
 use SimpleSAML\Session;
 use SimpleSAML\XHTML\Template;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Set of tests for the controllers in the "metaedit" module.
@@ -48,6 +47,7 @@ class MetaEditorTest extends TestCase
                 [
                     'useridattr' => 'uid',
                     'metahandlerConfig' => ['directory' => '/tmp'],
+                    'auth' => 'phpunit',
                 ],
                 '[ARRAY]',
                 'simplesaml'
@@ -171,7 +171,7 @@ class MetaEditorTest extends TestCase
     /**
      * @return array
      */
-    public function endpoints(): array
+    public static function endpoints(): array
     {
         return [
             ['', 'main'],

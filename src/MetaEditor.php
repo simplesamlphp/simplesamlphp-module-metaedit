@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SimpleSAML\Module\metaedit;
 
 use Exception;
@@ -49,7 +51,7 @@ class MetaEditor
             if ($indexed) {
                 $e['index'] = 0;
             }
-            $metadata[$key] = array($e);
+            $metadata[$key] = [$e];
         } else {
             if (isset($metadata[$key])) {
                 unset($metadata[$key]);
