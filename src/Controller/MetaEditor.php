@@ -84,8 +84,8 @@ class MetaEditor
      */
     public function main(Request $request): Template
     {
-        $authsource = $this->moduleConfig->getValue('auth', 'login-admin');
-        $useridattr = $this->moduleConfig->getValue('useridattr', 'eduPersonPrincipalName');
+        $authsource = $this->moduleConfig->getOptionalValue('auth', 'login-admin');
+        $useridattr = $this->moduleConfig->getOptionalValue('useridattr', 'eduPersonPrincipalName');
 
         $as = new $this->authSimple($authsource);
         $as->requireAuth();
@@ -98,7 +98,7 @@ class MetaEditor
         $userid = $attributes[$useridattr][0];
 
         $mdh = new Metadata\MetaDataStorageHandlerSerialize(
-            $this->moduleConfig->getArray('metahandlerConfig', ['directory' => '']),
+            $this->moduleConfig->getOptionalArray('metahandlerConfig', ['directory' => '']),
         );
 
         $delete = $request->get('delete');
@@ -138,8 +138,8 @@ class MetaEditor
      */
     public function edit(Request $request): Template
     {
-        $authsource = $this->moduleConfig->getValue('auth', 'login-admin');
-        $useridattr = $this->moduleConfig->getValue('useridattr', 'eduPersonPrincipalName');
+        $authsource = $this->moduleConfig->getOptionalValue('auth', 'login-admin');
+        $useridattr = $this->moduleConfig->getOptionalValue('useridattr', 'eduPersonPrincipalName');
 
         $as = new $this->authSimple($authsource);
         $as->requireAuth();
