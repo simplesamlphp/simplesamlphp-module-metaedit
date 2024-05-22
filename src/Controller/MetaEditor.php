@@ -56,7 +56,7 @@ class MetaEditor
      */
     public function __construct(
         Configuration $config,
-        Session $session
+        Session $session,
     ) {
         $this->config = $config;
         $this->moduleConfig = Configuration::getConfig('module_metaedit.php');
@@ -170,14 +170,14 @@ class MetaEditor
             $metadata['AssertionConsumerService'] = [
                 Utils\Config\Metadata::getDefaultEndpoint(
                     $metadata['AssertionConsumerService'],
-                    [Constants::BINDING_HTTP_POST]
-                )
+                    [Constants::BINDING_HTTP_POST],
+                ),
             ];
             $metadata['SingleLogoutService'] = [
                 Utils\Config\Metadata::getDefaultEndpoint(
                     $metadata['SingleLogoutService'],
-                    [Constants::BINDING_HTTP_REDIRECT]
-                )
+                    [Constants::BINDING_HTTP_REDIRECT],
+                ),
             ];
         } else {
             $metadata = [

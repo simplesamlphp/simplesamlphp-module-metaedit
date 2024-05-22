@@ -41,12 +41,12 @@ class MetaEditor
         array &$metadata,
         string $key,
         string $binding,
-        bool $indexed
+        bool $indexed,
     ): void {
         if (array_key_exists('field_' . $key, $request)) {
             $e = [
                 'Binding' => $binding,
-                'Location' => $request['field_' . $key]
+                'Location' => $request['field_' . $key],
             ];
             if ($indexed) {
                 $e['index'] = 0;
