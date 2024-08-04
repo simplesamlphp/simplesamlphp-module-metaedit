@@ -39,7 +39,7 @@ class MetaEditorTest extends TestCase
                 'module.enable' => ['metaedit' => true],
             ],
             '[ARRAY]',
-            'simplesaml'
+            'simplesaml',
         );
 
         Configuration::setPreLoadedConfig(
@@ -50,10 +50,10 @@ class MetaEditorTest extends TestCase
                     'auth' => 'phpunit',
                 ],
                 '[ARRAY]',
-                'simplesaml'
+                'simplesaml',
             ),
             'module_metaedit.php',
-            'simplesaml'
+            'simplesaml',
         );
 
         $this->session = Session::getSessionFromRequest();
@@ -71,7 +71,7 @@ class MetaEditorTest extends TestCase
     {
         $request = Request::create(
             '/',
-            'GET'
+            'GET',
         );
 
         $c = new Controller\MetaEditor($this->config, $this->session);
@@ -102,7 +102,7 @@ class MetaEditorTest extends TestCase
     {
         $request = Request::create(
             '/edit',
-            'GET'
+            'GET',
         );
 
         $c = new Controller\MetaEditor($this->config, $this->session);
@@ -151,7 +151,7 @@ class MetaEditorTest extends TestCase
     {
         $request = Request::create(
             '/' . $endpoint,
-            'GET'
+            'GET',
         );
 
         $c = new Controller\MetaEditor($this->config, $this->session);

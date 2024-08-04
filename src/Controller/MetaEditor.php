@@ -250,7 +250,7 @@ class MetaEditor
 
         if ($metadata['owner'] !== $userid) {
             throw new Exception(
-                'Metadata has an owner that is not equal to your userid, hence you are not granted access.'
+                'Metadata has an owner that is not equal to your userid, hence you are not granted access.',
             );
         }
     }
