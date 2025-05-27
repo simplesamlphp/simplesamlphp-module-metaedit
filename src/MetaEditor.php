@@ -125,7 +125,7 @@ class MetaEditor
      */
     protected function readonlyDateField(array $metadata, string $key, string $name): string
     {
-        $value = '<span style="color: #aaa">Not set</a>';
+        $value = '<span class="readonly">Not set</a>';
         if (array_key_exists($key, $metadata)) {
             $value = date('j. F Y, G:i', $metadata[$key]);
         }
@@ -253,6 +253,6 @@ class MetaEditor
             '</table></div><div id="saml"><table class="formtable">' .
             $this->endpointField($metadata, 'AssertionConsumerService', 'AssertionConsumerService endpoint') .
             $this->endpointField($metadata, 'SingleLogoutService', 'SingleLogoutService endpoint') .
-            '</table></div></div><input type="submit" name="submit" value="Save" style="margin-top: 5px" /></form>';
+            '</table></div></div><input type="submit" id="edit-submit" name="submit" value="Save" /></form>';
     }
 }

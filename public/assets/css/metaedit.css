@@ -28,6 +28,7 @@ table.formtable tr td input,table.formtable tr td textarea {
 }
 
 table.metalist {
+    width: 100%;
     border: 1px solid #aaa;
     border-collapse: collapse;
 }
@@ -42,4 +43,22 @@ table.metalist tr.even td {
 
 p#formedit-right {
     float: right;
+}
+
+#editarea {
+    height: 200px;
+    width: 90%;
+    border: 1px solid #aaa;
+}
+
+#edit-submit {
+    margin-top: 5px;
+}
+
+#import-submit {
+    margin-top: .5em;
+}
+
+span.readonly {
+    color: #aaa;
 }
