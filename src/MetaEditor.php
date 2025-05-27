@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace SimpleSAML\Module\metaedit;
 
 use Exception;
-use SAML2\Constants;
+use SimpleSAML\SAML2\Constants as C;
 
 /**
  * Editor for metadata
@@ -71,8 +71,8 @@ class MetaEditor
         $this->getStandardField($request, $metadata, 'entityid');
         $this->getStandardField($request, $metadata, 'name');
         $this->getStandardField($request, $metadata, 'description');
-        $this->getEndpointField($request, $metadata, 'AssertionConsumerService', Constants::BINDING_HTTP_POST, true);
-        $this->getEndpointField($request, $metadata, 'SingleLogoutService', Constants::BINDING_HTTP_REDIRECT, false);
+        $this->getEndpointField($request, $metadata, 'AssertionConsumerService', C::BINDING_HTTP_POST, true);
+        $this->getEndpointField($request, $metadata, 'SingleLogoutService', C::BINDING_HTTP_REDIRECT, false);
         $metadata['updated'] = time();
 
         foreach ($override as $key => $value) {
