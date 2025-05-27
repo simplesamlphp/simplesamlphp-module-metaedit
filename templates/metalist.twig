@@ -31,8 +31,8 @@
         <tr class="{{ class }}">
             <td>{{ metadata.name|escape('html') }}</td>
             <td><tt>{{ metadata.entityid|escape('html') }}</tt></td>
-            <td><a href="edit.php?entityid={{ metadata.name|escape('url') }}">edit</a></td>
-            <td><a href="index.php?delete={{ metadata.name|escape('url') }}">delete</a></td>
+            <td><a href="/edit?entityid={{ metadata.name|escape('url') }}">edit</a></td>
+            <td><a href="/?delete={{ metadata.name|escape('url') }}">delete</a></td>
         </tr>
     {% endfor %}
     {% endif %}
