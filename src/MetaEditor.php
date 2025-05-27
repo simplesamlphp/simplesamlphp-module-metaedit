@@ -239,7 +239,7 @@ class MetaEditor
     {
         $this->flattenLanguageField($metadata, 'name');
         $this->flattenLanguageField($metadata, 'description');
-        return '<form action="edit.php" method="post">' .
+        return '<form action="/module.php/metaedit/edit" method="post">' .
             (array_key_exists('entityid', $metadata) ?
             $this->hiddenField('was-entityid', $metadata['entityid']) :
             '') . '<div id="tabdiv"><ul><li><a href="#basic">Name and descrition</a></li>' .

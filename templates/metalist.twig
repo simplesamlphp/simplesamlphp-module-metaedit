@@ -31,15 +31,15 @@
         <tr class="{{ class }}">
             <td>{{ metadata.name|escape('html') }}</td>
             <td><tt>{{ metadata.entityid|escape('html') }}</tt></td>
-            <td><a href="edit.php?entityid={{ metadata.name|escape('url') }}">edit</a></td>
-            <td><a href="index.php?delete={{ metadata.name|escape('url') }}">delete</a></td>
+            <td><a href="/module.php/metaedit/edit?entityid={{ metadata.name|escape('url') }}">edit</a></td>
+            <td><a href="/module.php/metaedit/?delete={{ metadata.name|escape('url') }}">delete</a></td>
         </tr>
     {% endfor %}
     {% endif %}
 
     </table>
 
-    <p><a href="edit.php">Add new entity</a> | <a href="xmlimport.php">Add from SAML 2.0 XML metadata</a></p>
+    <p><a href="/module.php/metaedit/edit">Add new entity</a> | <a href="/module.php/metaedit/import">Add from SAML 2.0 XML metadata</a></p>
 
     <h2>Other entries</h2>
     <table class="metalist" style="width: 100%">

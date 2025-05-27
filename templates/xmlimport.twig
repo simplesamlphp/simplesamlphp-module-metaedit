@@ -4,12 +4,12 @@
 
 <h1>Import SAML 2.0 XML Metadata</h1>
 
-<form method="post" action="edit.php">
+<form method="post" action="/edit">
   <p>Paste in SAML 2.0 XML Metadata for the entity that you would like to add.</p>
   <textarea style="height: 200px; width: 90%; border: 1px solid #aaa;" cols="50" rows="5" name="xmlmetadata"></textarea>
   <input type="submit" style="margin-top: .5em" name="metasubmit" value="Import metadata" />
 </form>
 
-<p style="float: right"><a href="index.php">Return to entity listing</a></p>
+<p style="float: right"><a href="/module.php/metaedit/">Return to entity listing</a></p>
 
 {% endblock %}
