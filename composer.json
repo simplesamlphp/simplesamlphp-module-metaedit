@@ -24,7 +24,8 @@
 
         "simplesamlphp/saml2": "^5.0",
         "simplesamlphp/simplesamlphp": "^2.4",
-        "symfony/http-foundation": "^6.4"
+        "symfony/http-foundation": "^6.4",
+        "simplesamlphp/simplesamlphp-assets-jquery": "^2.4"
     },
     "require-dev": {
         "simplesamlphp/simplesamlphp-test-framework": "^1.9"
