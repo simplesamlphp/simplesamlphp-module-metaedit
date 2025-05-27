@@ -1,9 +1,19 @@
+---
+
 metaedit-main:
-    path:       /
-    defaults:   { _controller: 'SimpleSAML\Module\metaedit\Controller\MetaEditor::main' }
+  path: /
+  defaults: {
+    _controller: 'SimpleSAML\Module\metaedit\Controller\MetaEditor::main'
+  }
+
 metaedit-edit:
-    path:       /edit
-    defaults:   { _controller: 'SimpleSAML\Module\metaedit\Controller\MetaEditor::edit' }
+  path: /edit
+  defaults: {
+    _controller: 'SimpleSAML\Module\metaedit\Controller\MetaEditor::edit'
+  }
+
 metaedit-import:
-    path:       /import
-    defaults:   { _controller: 'SimpleSAML\Module\metaedit\Controller\MetaEditor::import' }
+  path: /import
+  defaults: {
+    _controller: 'SimpleSAML\Module\metaedit\Controller\MetaEditor::import'
+  }
