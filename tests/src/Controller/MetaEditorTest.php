@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @covers \SimpleSAML\Module\metaedit\Controller\MetaEditor
  */
-class MetaEditorTest extends TestCase
+final class MetaEditorTest extends TestCase
 {
     /** @var \SimpleSAML\Configuration */
     protected Configuration $config;
