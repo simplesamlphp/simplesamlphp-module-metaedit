@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace SimpleSAML\Module\metaedit\Controller;
 
 use Exception;
-use SAML2\Constants;
+use SimpleSAML\SAML2\Constants as C;
 use SimpleSAML\Auth;
 use SimpleSAML\Configuration;
 use SimpleSAML\Error;
@@ -170,13 +170,13 @@ class MetaEditor
             $metadata['AssertionConsumerService'] = [
                 Utils\Config\Metadata::getDefaultEndpoint(
                     $metadata['AssertionConsumerService'],
-                    [Constants::BINDING_HTTP_POST],
+                    [C::BINDING_HTTP_POST],
                 ),
             ];
             $metadata['SingleLogoutService'] = [
                 Utils\Config\Metadata::getDefaultEndpoint(
                     $metadata['SingleLogoutService'],
-                    [Constants::BINDING_HTTP_REDIRECT],
+                    [C::BINDING_HTTP_REDIRECT],
                 ),
             ];
         } else {
