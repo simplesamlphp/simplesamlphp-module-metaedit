@@ -2,21 +2,17 @@
 
 {% block preload %}
     <link rel="stylesheet" media="screen" href="{{ asset('css/jquery-ui.min.css', 'jquery') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/metaedit.css') }}" />
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#tabdiv").tabs();
-        });
-    </script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/metaedit.css', 'metaedit') }}" />
 {% endblock %}
 
 {% block postload %}
     <script src="{{ asset('js/jquery.min.js', 'jquery') }}"></script>
     <script src="{{ asset('js/jquery-ui.min.js', 'jquery') }}"></script>
+    <script src="{{ asset('js/tablist.js', 'metaedit') }}"></script>
 {% endblock %}
 
 {% block content %}
 <h1>Metadata Editor</h1>
-{{ form  }}
+{{ form|raw }}
 <p id="formedit-right"><a href="/module.php/metaedit/">Return to entity listing <strong>without saving...</strong></a></p>
 {% endblock %}
