@@ -14,8 +14,8 @@ use SimpleSAML\XHTML\Template;
 function metaedit_hook_configpage(Template &$template): void
 {
     $template->data['links'][] = [
-        'href' => Module::getModuleURL('metaedit/index.php'),
-        'text' => [Translate::noop('Metadata registry')],
+        'href' => Module::getModuleURL('metaedit/'),
+        'text' => Translate::noop('Metadata registry'),
     ];
 
     $template->getLocalization()->addModuleDomain('metaedit');
