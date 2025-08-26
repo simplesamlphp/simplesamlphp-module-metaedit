@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace SimpleSAML\Module\metaedit\Controller;
 
 use Exception;
-use SimpleSAML\SAML2\Constants as C;
 use SimpleSAML\Auth;
 use SimpleSAML\Configuration;
 use SimpleSAML\Error;
 use SimpleSAML\Metadata;
 use SimpleSAML\Module\metaedit\MetaEditor as Editor;
+use SimpleSAML\SAML2\Constants as C;
 use SimpleSAML\Session;
 use SimpleSAML\Utils;
 use SimpleSAML\XHTML\Template;
