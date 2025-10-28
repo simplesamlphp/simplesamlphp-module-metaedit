@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SimpleSAML\Test\Module\metaedit\Controller;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use SimpleSAML\Auth;
 use SimpleSAML\Configuration;
@@ -146,11 +147,11 @@ final class MetaEditorTest extends TestCase
     /**
      * Test that a missing SourceID results in an error-response
      *
-     * @dataProvider endpoints
      * @param string $endpoint
      * @param string $method
      * @return void
      */
+    #[DataProvider('endpoints')]
     public function testMissingUserId(string $endpoint, string $method): void
     {
         $request = Request::create(
