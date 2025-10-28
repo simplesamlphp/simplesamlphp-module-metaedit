@@ -154,7 +154,9 @@ class MetaEditor
         $entityId = $request->get('entityid');
         $xmlMetadata = $request->get('xmlmetadata');
 
-        $mdh = new Metadata\MetaDataStorageHandlerSerialize($this->moduleConfig->getArray('metahandlerConfig', []));
+        $mdh = new Metadata\MetaDataStorageHandlerSerialize(
+            $this->moduleConfig->getOptionalArray('metahandlerConfig', []),
+        );
 
         if ($entityId !== null) {
             $metadata = $mdh->getMetadata($entityId, 'saml20-sp-remote');
