@@ -80,6 +80,8 @@ final class MetaEditorTest extends TestCase
             {
                 // stub
             }
+
+
             public function getAttributes(): array
             {
                 return ['uid' => 'test'];
@@ -111,6 +113,8 @@ final class MetaEditorTest extends TestCase
             {
                 // stub
             }
+
+
             public function getAttributes(): array
             {
                 return ['uid' => 'test'];
