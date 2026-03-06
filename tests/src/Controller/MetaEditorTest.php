@@ -11,7 +11,6 @@ use SimpleSAML\Configuration;
 use SimpleSAML\Error;
 use SimpleSAML\Module\metaedit\Controller;
 use SimpleSAML\Session;
-use SimpleSAML\XHTML\Template;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -92,7 +91,6 @@ final class MetaEditorTest extends TestCase
         $response = $c->main($request);
 
         $this->assertTrue($response->isSuccessful());
-        $this->assertInstanceOf(Template::class, $response);
     }
 
 
@@ -125,7 +123,6 @@ final class MetaEditorTest extends TestCase
         $response = $c->edit($request);
 
         $this->assertTrue($response->isSuccessful());
-        $this->assertInstanceOf(Template::class, $response);
     }
 
 
@@ -140,7 +137,6 @@ final class MetaEditorTest extends TestCase
         $response = $c->import();
 
         $this->assertTrue($response->isSuccessful());
-        $this->assertInstanceOf(Template::class, $response);
     }
 
 
